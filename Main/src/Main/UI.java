@@ -127,17 +127,40 @@ public class UI {
         });
 
         bgPanel[bgNum].add(objectLabel);
-        bgPanel[bgNum].add(bgLabel[bgNum]);
+    }
+
+    public void createArrowButton(int bgNum , int x, int y , int width , int height ,
+                                  String arrowFileName, String command){
+
+        ImageIcon arrowIcon = new ImageIcon(getClass().getClassLoader().getResource("resources/images/"+ arrowFileName));
+
+        Image image = arrowIcon.getImage();
+        Image scaledImage = image.getScaledInstance(width, height, Image.SCALE_FAST);
+        arrowIcon = new ImageIcon(scaledImage);
+
+        JButton arrowButton = new JButton();
+        arrowButton.setBounds(x,y,width,height);
+        arrowButton.setBackground(null);
+        arrowButton.setContentAreaFilled(false);
+        arrowButton.setFocusPainted(false);
+        arrowButton.setIcon(arrowIcon);
+        arrowButton.addActionListener(gm.actionHandler);
+        arrowButton.setActionCommand(command);
+
+        bgPanel[bgNum].add(arrowButton);
     }
 
     public void generateScreen(){
 
-        //Screen 1
+        //Scene 1
         createBackground(1, "bg.jpeg");
         createObject(1,450,130, 200, 200, "hut.png", "Look", "Talk", "Rest" , "lookHut" , "talkHut" , "restHut");
         createObject(1,70,170, 150, 150, "guard.png", "Look at the Guard", "Talk to Guard", "Attack the Guard" , "Look Guard" , "TalkToGuard" , "AttackGuard");
         createObject(1,250,220, 150, 130, "chest.png", "Open the chest", "Leave it alone", "Search for keys" , "openChest" , "leaveAlone" , "searchKeys");
 
+        createArrowButton(1, 0, 150, 50, 50, "left.png", "nextScreen");
+        createArrowButton(1, 650, 150, 50, 50, "right.png", "nextScreen");
+        bgPanel[1].add(bgLabel[1]);
     }
 
     public void typeText(String text) {
