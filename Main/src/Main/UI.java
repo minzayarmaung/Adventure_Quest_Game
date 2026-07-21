@@ -143,11 +143,14 @@ public class UI {
         arrowButton.setBackground(null);
         arrowButton.setContentAreaFilled(false);
         arrowButton.setFocusPainted(false);
+        arrowButton.setBorder(null);
         arrowButton.setIcon(arrowIcon);
         arrowButton.addActionListener(gm.actionHandler);
         arrowButton.setActionCommand(command);
+        arrowButton.setBorderPainted(false);
 
         bgPanel[bgNum].add(arrowButton);
+        bgPanel[bgNum].setComponentZOrder(arrowButton, 0);
     }
 
     public void generateScreen(){
