@@ -8,6 +8,9 @@ import java.io.InputStream;
 
 public class UI {
 
+    private Timer typeTimer;
+    private int charIndex = 0;
+
     GameManager gm;
     JFrame window;
     public JTextArea messageText;
@@ -135,5 +138,25 @@ public class UI {
         createObject(1,70,170, 150, 150, "guard.png", "Look at the Guard", "Talk to Guard", "Attack the Guard" , "Look Guard" , "TalkToGuard" , "AttackGuard");
         createObject(1,250,220, 150, 130, "chest.png", "Open the chest", "Leave it alone", "Search for keys" , "openChest" , "leaveAlone" , "searchKeys");
 
+    }
+
+    public void typeText(String text) {
+        if (typeTimer != null && typeTimer.isRunning()) {
+            typeTimer.stop();
+        }
+
+        messageText.setText("");
+        charIndex = 0;
+
+        typeTimer = new Timer(30, e -> {
+            if (charIndex < text.length()) {
+                messageText.append(String.valueOf(text.charAt(charIndex)));
+                charIndex++;
+            } else {
+                ((Timer) e.getSource()).stop();
+            }
+        });
+
+        typeTimer.start();
     }
 }
