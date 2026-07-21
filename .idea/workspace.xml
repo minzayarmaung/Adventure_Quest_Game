@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b59b5aed-3cf0-4af8-97c2-998e7c3c8c27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Main/src/Main/UI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/font/pixel_font.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/bg.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/broad-dagger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/cavee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/chest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/dragon-shield.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/greenbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/guard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/hut.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/lantern-flame.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/home/minzayar/Data/Personal/Adventure_Quest_Game" value="3Gnt7GAZMNPIY6YmaPxHs0FMGYt" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Gnt7GAZMNPIY6YmaPxHs0FMGYt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GameManager.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Run_Game.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/minzayar/Data/Personal/Adventure_Quest_Game/Main/src/resources/images",
+    "node.js.detected.package.jshint": "true",
+    "node.js.selected.package.jshint": "",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/minzayar/Data/Personal/Adventure_Quest_Game/Main/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Main/src/resources/images" />
+      <recent name="$PROJECT_DIR$/Main/src/resources/font" />
+      <recent name="$PROJECT_DIR$/Main/src/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Main/src/resources/font" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Run_Game" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main.GameManager" />
+      <module name="Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.258" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.258" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b59b5aed-3cf0-4af8-97c2-998e7c3c8c27" name="Changes" comment="" />
+      <created>1784618992204</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1784618992204</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
