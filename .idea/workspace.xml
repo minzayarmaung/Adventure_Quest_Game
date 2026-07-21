@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b59b5aed-3cf0-4af8-97c2-998e7c3c8c27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Main/src/Main/UI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/font/pixel_font.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/bg.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/broad-dagger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/cavee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/chest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/dragon-shield.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/greenbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/guard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/hut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/lantern-flame.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/Event/Event01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/GameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/UI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/UI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/UI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +60,8 @@
     "onboarding.tips.debug.path": "/home/minzayar/Data/Personal/Adventure_Quest_Game/Main/src/Main.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="RecentsManager">

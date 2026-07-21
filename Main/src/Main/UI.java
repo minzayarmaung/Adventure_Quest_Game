@@ -30,7 +30,7 @@ public class UI {
 
         messageText = new JTextArea("Welcome Adventurer!");
         messageText.setBounds(50,410,700,150);
-        messageText.setBackground(Color.gray);
+        messageText.setBackground(Color.BLACK);
         messageText.setForeground(Color.WHITE);
         messageText.setEditable(false);
         messageText.setLineWrap(true);
@@ -71,18 +71,25 @@ public class UI {
     }
 
     public void createObject(int bgNum ,int objx , int objy , int objWidth , int objHeight , String objFileName ,
-                             String choice1Name , String choice2Name , String choice3Name ){
+                             String choice1Name , String choice2Name , String choice3Name,
+                             String choice1Command , String choice2Command , String choice3Command){
 
         JPopupMenu popupMenu = new JPopupMenu();
         JMenuItem menuItem[] = new JMenuItem[4];
 
         menuItem[1] = new JMenuItem(choice1Name);
+        menuItem[1].addActionListener(gm.actionHandler);
+        menuItem[1].setActionCommand(choice1Command);
         popupMenu.add(menuItem[1]);
 
         menuItem[2] = new JMenuItem(choice2Name);
+        menuItem[2].addActionListener(gm.actionHandler);
+        menuItem[2].setActionCommand(choice2Command);
         popupMenu.add(menuItem[2]);
 
         menuItem[3] = new JMenuItem(choice3Name);
+        menuItem[3].addActionListener(gm.actionHandler);
+        menuItem[3].setActionCommand(choice3Command);
         popupMenu.add(menuItem[3]);
 
         JLabel objectLabel = new JLabel();
@@ -124,9 +131,9 @@ public class UI {
 
         //Screen 1
         createBackground(1, "bg.jpeg");
-        createObject(1,450,130, 200, 200, "hut.png", "Look", "Talk", "Rest");
-        createObject(1,70,170, 150, 150, "guard.png", "Talk to the guard", "Ask for help", "Ignore the guard");
-        createObject(1,250,220, 150, 130, "chest.png", "Open the chest", "Leave it alone", "Search for keys");
+        createObject(1,450,130, 200, 200, "hut.png", "Look", "Talk", "Rest" , "lookHut" , "talkHut" , "restHut");
+        createObject(1,70,170, 150, 150, "guard.png", "Look at the Guard", "Talk to Guard", "Attack the Guard" , "Look Guard" , "TalkToGuard" , "AttackGuard");
+        createObject(1,250,220, 150, 130, "chest.png", "Open the chest", "Leave it alone", "Search for keys" , "openChest" , "leaveAlone" , "searchKeys");
 
     }
 }
