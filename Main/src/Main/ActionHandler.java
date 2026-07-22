@@ -59,6 +59,15 @@ public class ActionHandler implements ActionListener {
             case "openGoldChest":
                 gm.event01.openGoldChest();
                 break;
+            case "lookIntoForest":
+                gm.event01.lookIntoForest();
+                break;
+            case "talkInForest":
+                gm.event01.talkInForest();
+                break;
+            case "enterForest":
+                gm.event01.enterForest();
+                break;
             // Change Scenes
             case "goScene1":
                 gm.sceneChanger.showScene1();
