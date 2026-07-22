@@ -26,6 +26,10 @@ public class UI {
     JLabel titleLabel;
     JButton restartButton;
 
+    // Monster UI reference so it can be interacted with and removed
+    public JLabel monsterLabel;
+    public int monsterBgNum = -1;
+
     public UI(GameManager gm){
         this.gm = gm;
         createMainField();
@@ -263,6 +267,60 @@ public class UI {
         restartButton.addActionListener(gm.actionHandler);
         restartButton.setActionCommand("restart");
         window.add(restartButton);
+    }
+
+    public void showMonster(int currentBgNum){
+        // Remove previous monster if any
+        removeMonster();
+
+        monsterLabel = new JLabel();
+        monsterBgNum = currentBgNum;
+
+        ImageIcon monsterImage = new ImageIcon(getClass().getClassLoader().getResource("resources/images/monster.png"));
+        Image image = monsterImage.getImage();
+        Image scaledImage = image.getScaledInstance(300, 300, Image.SCALE_FAST);
+        monsterImage = new ImageIcon(scaledImage);
+
+        monsterLabel.setIcon(monsterImage);
+        monsterLabel.setBounds(200, 75, 300, 300);
+        monsterLabel.setVisible(true);
+
+        // Create pop-up to allow attacking the monster
+        JPopupMenu popupMenu = new JPopupMenu();
+        JMenuItem attackItem = new JMenuItem("Attack");
+        attackItem.addActionListener(gm.actionHandler);
+        attackItem.setActionCommand("attackMonster");
+        popupMenu.add(attackItem);
+
+        monsterLabel.addMouseListener(new MouseListener() {
+            public void mouseClicked(MouseEvent e) {}
+            public void mousePressed(MouseEvent e) {
+                if(SwingUtilities.isRightMouseButton(e)) {
+                    popupMenu.show(monsterLabel , e.getX() , e.getY());
+                }
+            }
+            public void mouseReleased(MouseEvent e) {}
+            public void mouseEntered(MouseEvent e) {}
+            public void mouseExited(MouseEvent e) {}
+        });
+
+        bgPanel[currentBgNum].add(monsterLabel);
+        bgPanel[currentBgNum].setComponentZOrder(monsterLabel, 0);
+
+        bgPanel[currentBgNum].repaint();
+        bgPanel[currentBgNum].revalidate();
+    }
+
+    // Remove the monster from the scene if present
+    public void removeMonster(){
+        if (monsterLabel != null && monsterBgNum >= 0 && bgPanel[monsterBgNum] != null) {
+            int prevBg = monsterBgNum;
+            bgPanel[prevBg].remove(monsterLabel);
+            monsterLabel = null;
+            monsterBgNum = -1;
+            bgPanel[prevBg].repaint();
+            bgPanel[prevBg].revalidate();
+        }
     }
 
     public void typeText(String text) {

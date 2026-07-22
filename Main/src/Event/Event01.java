@@ -4,6 +4,7 @@ import Main.GameManager;
 
 public class Event01 {
 
+    private int caveVisitCount = 0;
     GameManager gm;
 
     public Event01(GameManager gm) {
@@ -103,11 +104,96 @@ public class Event01 {
     }
 
     public void talkInCave(){
-        gm.ui.typeText("You talk to the mysterious figure in the cave. He tells you that he has been waiting for you and that he has a task for you.");
+        gm.ui.typeText("HELLO !!\n(You shouted but nothing responds except your echo.)");
     }
 
+    private int monsterLife = 0;
+    private boolean monsterDefeated = false;
+
     public void enterCave(){
-        gm.ui.typeText("You enter the cave and find yourself in a large chamber filled with treasure. The mysterious figure tells you that you have proven yourself worthy and that you may take whatever you wish.");
+        // If player has sword, start the monster encounter in the cave
+        if (gm.player.hasSword == 1) {
+            if (monsterDefeated) {
+                gm.ui.typeText("The cave is quiet now. The Monster has already been defeated.");
+                return;
+            }
+            startMonsterEncounter();
+            return;
+        }
+
+        if (gm.player.hasLantern == 1) {
+            gm.ui.typeText("You enter the cave with your lantern and found the Key.");
+        } else {
+            if (caveVisitCount == 1) {
+                gm.ui.typeText("Monster : GRRRRRRRR!\nThe Monster attacked you.\n(Hint: You need a lantern to enter the cave.)");
+                gm.player.playerLife = 0;
+                gm.player.updatePlayerStatus();
+
+                gm.ui.showMonster(2);
+                gm.sceneChanger.showGameOverScreen(2);
+
+                caveVisitCount = 0;
+            } else {
+                gm.ui.typeText("It's too dark! There might be a Monster in there.");
+            }
+            caveVisitCount++;
+        }
+    }
+
+    // Start the monster fight. Only allowed when player has a sword.
+    public void startMonsterEncounter() {
+        // Initialize monster lives and show it in the cave
+        monsterLife = 3;
+        gm.ui.showMonster(2);
+        gm.ui.typeText("A Monster appears! It has 3 hearts. Right-click it and choose 'Attack'.\nWhen you attack, it will hit you back.");
+    }
+
+    // Called when player chooses to attack the monster
+    public void attackMonster() {
+        if (gm.player.hasSword == 0) {
+            gm.ui.typeText("You don't have a sword to attack the Monster.");
+            return;
+        }
+
+        if (monsterLife <= 0) {
+            gm.ui.typeText("The Monster is already defeated.");
+            return;
+        }
+
+        if (gm.player.playerLife <= 0) {
+            gm.ui.typeText("You are already defeated. Restart to try again.");
+            gm.sceneChanger.showGameOverScreen(2);
+            return;
+        }
+
+        // Mutual damage: player attacks monster and monster hits back
+        monsterLife--;
+        gm.player.playerLife--;
+        gm.player.updatePlayerStatus();
+
+        if (gm.player.playerLife <= 0) {
+            gm.ui.typeText("The Monster struck back and you died.");
+            gm.ui.showMonster(2);
+            gm.sceneChanger.showGameOverScreen(2);
+            return;
+        }
+
+        if (monsterLife > 0) {
+            gm.ui.typeText("You hit the Monster! Monster hearts left: " + monsterLife + ". The Monster hit you back!");
+        } else {
+            // Monster defeated
+            monsterDefeated = true;
+            gm.ui.typeText("You struck the final blow and defeated the Monster!\nYou can continue your journey.");
+            gm.player.updatePlayerStatus();
+            gm.ui.removeMonster();
+        }
+    }
+
+    // Reset event state (used when restarting the game)
+    public void resetEvent() {
+        caveVisitCount = 0;
+        monsterLife = 0;
+        monsterDefeated = false;
     }
 }
 
