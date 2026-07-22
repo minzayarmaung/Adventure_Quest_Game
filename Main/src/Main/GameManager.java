@@ -6,6 +6,7 @@ public class GameManager {
 
     ActionHandler actionHandler = new ActionHandler(this);
     public UI ui = new UI(this);
+    public Player player = new Player(this);
     public SceneChanger sceneChanger = new SceneChanger(this);
 
     public Event01 event01 = new Event01(this);
@@ -15,5 +16,7 @@ public class GameManager {
     }
 
     public GameManager(){
+        player.setPlayerDefaultStatus();
+        sceneChanger.showScene1();
     }
 }

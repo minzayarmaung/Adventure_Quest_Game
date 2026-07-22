@@ -17,9 +17,16 @@ public class UI {
     public JPanel bgPanel[] = new JPanel[10];
     public JLabel bgLabel[] = new JLabel[10];
 
+    //Player UI
+    JPanel lifePanel;
+    JLabel lifeLabel[] = new JLabel[6];
+    JPanel inventoryPanel;
+    public JLabel swordLabel, shieldLabel , lanternLabel;
+
     public UI(GameManager gm){
         this.gm = gm;
         createMainField();
+        createPlayerField();
         generateScreen();
         window.setVisible(true);
     }
@@ -181,6 +188,57 @@ public class UI {
         createBackground(3,"darkforest.png");
         createArrowButton(3, 0, 150, 50, 50, "left.png", "goScene1");
         bgPanel[3].add(bgLabel[3]);
+    }
+
+    public void createPlayerField(){
+
+        lifePanel = new JPanel();
+        lifePanel.setBounds(50, 10, 200, 30);
+        lifePanel.setBackground(Color.BLACK);
+        lifePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 0));
+        window.add(lifePanel);
+
+        for (int i = 0; i < 6; i++) {
+            lifeLabel[i] = new JLabel();
+            ImageIcon heartIcon = new ImageIcon(getClass().getClassLoader().getResource("resources/images/heart.png"));
+            Image image = heartIcon.getImage();
+            Image scaledImage = image.getScaledInstance(30, 30, Image.SCALE_FAST);
+            heartIcon = new ImageIcon(scaledImage);
+            lifeLabel[i].setIcon(heartIcon);
+            lifePanel.add(lifeLabel[i]);
+        }
+
+        inventoryPanel = new JPanel();
+        inventoryPanel.setBounds(600, 10, 150, 30);
+        inventoryPanel.setBackground(Color.BLACK);
+        inventoryPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 0));
+        window.add(inventoryPanel);
+
+        //Create Items
+        swordLabel = new JLabel();
+        ImageIcon swordIcon =  new ImageIcon(getClass().getClassLoader().getResource("resources/images/sword.png"));
+        Image image = swordIcon.getImage();
+        Image scaledImage = image.getScaledInstance(30, 30, Image.SCALE_FAST);
+        swordIcon = new ImageIcon(scaledImage);
+        swordLabel.setIcon(swordIcon);
+
+        shieldLabel = new JLabel();
+        ImageIcon shieldIcon =  new ImageIcon(getClass().getClassLoader().getResource("resources/images/shield.png"));
+        image = shieldIcon.getImage();
+        scaledImage = image.getScaledInstance(30, 30, Image.SCALE_FAST);
+        shieldIcon = new ImageIcon(scaledImage);
+        shieldLabel.setIcon(shieldIcon);
+
+        lanternLabel = new JLabel();
+        ImageIcon lanternIcon =  new ImageIcon(getClass().getClassLoader().getResource("resources/images/lantern.png"));
+        image = lanternIcon.getImage();
+        scaledImage = image.getScaledInstance(30, 30, Image.SCALE_FAST);
+        lanternIcon = new ImageIcon(scaledImage);
+        lanternLabel.setIcon(lanternIcon);
+
+        inventoryPanel.add(swordLabel);
+        inventoryPanel.add(shieldLabel);
+        inventoryPanel.add(lanternLabel);
     }
 
     public void typeText(String text) {
