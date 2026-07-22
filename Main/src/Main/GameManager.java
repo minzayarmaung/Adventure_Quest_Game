@@ -2,6 +2,8 @@ package Main;
 
 import Event.Event01;
 
+import java.net.URL;
+
 public class GameManager {
 
     ActionHandler actionHandler = new ActionHandler(this);
@@ -10,6 +12,8 @@ public class GameManager {
     public SceneChanger sceneChanger = new SceneChanger(this);
 
     public Event01 event01 = new Event01(this);
+
+    public URL fieldMusic = getClass().getClassLoader().getResource("");
 
     public static void main(String[] args) {
         new GameManager();
