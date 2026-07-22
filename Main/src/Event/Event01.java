@@ -45,5 +45,17 @@ public class Event01 {
     public void searchKeys() {
         gm.ui.typeText("You search the area around the chest and find a small key hidden under a rock.");
     }
+
+    public void lookIntoCave(){
+        gm.ui.typeText("The cave is dark and damp. You can hear the sound of water dripping from the ceiling.");
+    }
+
+    public void talkInCave(){
+        gm.ui.typeText("You talk to the mysterious figure in the cave. He tells you that he has been waiting for you and that he has a task for you.");
+    }
+
+    public void enterCave(){
+        gm.ui.typeText("You enter the cave and find yourself in a large chamber filled with treasure. The mysterious figure tells you that you have proven yourself worthy and that you may take whatever you wish.");
+    }
 }
 

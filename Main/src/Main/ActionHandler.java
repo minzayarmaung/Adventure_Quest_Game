@@ -41,6 +41,25 @@ public class ActionHandler implements ActionListener {
             case "searchKeys":
                 gm.event01.searchKeys();
                 break;
+            case "lookIntoCave":
+                gm.event01.lookIntoCave();
+                break;
+            case "talkInCave":
+                gm.event01.talkInCave();
+                break;
+            case "enterCave":
+                gm.event01.enterCave();
+                break;
+            // Change Scenes
+            case "goScene1":
+                gm.sceneChanger.showScene1();
+                break;
+            case "goScene2":
+                gm.sceneChanger.showScene2();
+                break;
+            case "goScene3":
+                gm.sceneChanger.showScene3();
+                break;
         }
     }
 }

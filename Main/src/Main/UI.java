@@ -97,6 +97,8 @@ public class UI {
 
         JLabel objectLabel = new JLabel();
         objectLabel.setBounds(objx, objy, objWidth, objHeight);
+//        objectLabel.setOpaque(true);
+//        objectLabel.setBackground(Color.blue);
 
         ImageIcon objectIcon = new ImageIcon(getClass().getClassLoader().getResource("resources/images/" + objFileName));
 
@@ -157,13 +159,28 @@ public class UI {
 
         //Scene 1
         createBackground(1, "bg.jpeg");
-        createObject(1,450,130, 200, 200, "hut.png", "Look", "Talk", "Rest" , "lookHut" , "talkHut" , "restHut");
-        createObject(1,70,170, 150, 150, "guard.png", "Look at the Guard", "Talk to Guard", "Attack the Guard" , "Look Guard" , "TalkToGuard" , "AttackGuard");
-        createObject(1,250,220, 150, 130, "chest.png", "Open the chest", "Leave it alone", "Search for keys" , "openChest" , "leaveAlone" , "searchKeys");
+        createObject(1,450,130, 200, 200, "hut.png",
+                "Look", "Talk", "Rest" , "lookHut" , "talkHut" , "restHut");
+        createObject(1,70,170, 150, 150, "guard.png",
+                "Look at the Guard", "Talk to Guard", "Attack the Guard" , "Look Guard" , "TalkToGuard" , "AttackGuard");
+        createObject(1,250,220, 150, 130, "chest.png",
+                "Open the chest", "Leave it alone", "Search for keys" , "openChest" , "leaveAlone" , "searchKeys");
 
-        createArrowButton(1, 0, 150, 50, 50, "left.png", "nextScreen");
-        createArrowButton(1, 650, 150, 50, 50, "right.png", "nextScreen");
+        createArrowButton(1, 0, 150, 50, 50, "left.png", "goScene2");
+        createArrowButton(1, 650, 150, 50, 50, "right.png", "goScene3");
         bgPanel[1].add(bgLabel[1]);
+
+        //Scene 2
+        createBackground(2, "cavee.png");
+        createObject(2,0,0,700,350, "cavee.png",
+                "Look","Talk","Enter","lookIntoCave","talkInCave","enterCave");
+        createArrowButton(2, 650, 150, 50, 50, "right.png", "goScene1");
+        bgPanel[2].add(bgLabel[2]);
+
+        //Scene 3
+        createBackground(3,"darkforest.png");
+        createArrowButton(3, 0, 150, 50, 50, "left.png", "goScene1");
+        bgPanel[3].add(bgLabel[3]);
     }
 
     public void typeText(String text) {
@@ -174,7 +191,7 @@ public class UI {
         messageText.setText("");
         charIndex = 0;
 
-        typeTimer = new Timer(30, e -> {
+        typeTimer = new Timer(20, e -> {
             if (charIndex < text.length()) {
                 messageText.append(String.valueOf(text.charAt(charIndex)));
                 charIndex++;
