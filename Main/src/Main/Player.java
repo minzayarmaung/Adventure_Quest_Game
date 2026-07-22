@@ -16,8 +16,8 @@ public class Player {
     }
 
     public void setPlayerDefaultStatus(){
-        playerMaxLife = 5;
-        playerLife = 2;
+        playerMaxLife =5;
+        playerLife = 3;
         hasSword = 0;
         hasShield = 0;
         hasLantern = 0;
@@ -27,35 +27,25 @@ public class Player {
 
     public void updatePlayerStatus(){
 
-        //Remove All Life Icons
-        int i = 1;
-        while(i<6){
-            gm.ui.lifeLabel[i].setVisible(false);
-            i++;
+        // Safely hide all life icons (guard against nulls and index issues)
+        for (int i = 0; i < gm.ui.lifeLabel.length; i++) {
+            if (gm.ui.lifeLabel[i] != null) {
+                gm.ui.lifeLabel[i].setVisible(false);
+            }
         }
 
-        int lifeCount = playerLife;
-        while(lifeCount!=0){
-            gm.ui.lifeLabel[lifeCount].setVisible(true);
-            lifeCount--;
+        // Show icons for current life count (0..playerLife-1)
+        int livesToShow = Math.max(0, Math.min(playerLife, gm.ui.lifeLabel.length));
+        for (int i = 0; i < livesToShow; i++) {
+            if (gm.ui.lifeLabel[i] != null) {
+                gm.ui.lifeLabel[i].setVisible(true);
+            }
         }
 
         // Checker Player Items
-        if(hasSword==0){
-            gm.ui.swordLabel.setVisible(false);
-        } else {
-            gm.ui.swordLabel.setVisible(true);
-        }
-        if(hasShield==0){
-            gm.ui.shieldLabel.setVisible(false);
-        } else {
-            gm.ui.shieldLabel.setVisible(true);
-        }
-        if(hasLantern==0){
-            gm.ui.lanternLabel.setVisible(false);
-        } else {
-            gm.ui.lanternLabel.setVisible(true);
-        }
+        gm.ui.swordLabel.setVisible(hasSword != 0);
+        gm.ui.shieldLabel.setVisible(hasShield != 0);
+        gm.ui.lanternLabel.setVisible(hasLantern != 0);
     }
 
 }

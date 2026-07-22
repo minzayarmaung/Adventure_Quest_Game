@@ -38,8 +38,8 @@ public class ActionHandler implements ActionListener {
             case "leaveAlone":
                 gm.event01.leaveAlone();
                 break;
-            case "searchKeys":
-                gm.event01.searchKeys();
+            case "search":
+                gm.event01.search();
                 break;
             case "lookIntoCave":
                 gm.event01.lookIntoCave();
@@ -59,6 +59,11 @@ public class ActionHandler implements ActionListener {
                 break;
             case "goScene3":
                 gm.sceneChanger.showScene3();
+                break;
+            // Restart Game
+            case "restart":
+                gm.sceneChanger.existsGameOverScreen();
+                gm.sceneChanger.showScene1();
                 break;
         }
     }

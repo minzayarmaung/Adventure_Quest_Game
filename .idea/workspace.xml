@@ -6,6 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b59b5aed-3cf0-4af8-97c2-998e7c3c8c27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Event/Event01.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Event/Event01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Main/SceneChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/SceneChanger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Event/Event01.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Event/Event01.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/ActionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/ActionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/SceneChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/SceneChanger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/UI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/UI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/UI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

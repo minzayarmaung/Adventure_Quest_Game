@@ -23,10 +23,14 @@ public class UI {
     JPanel inventoryPanel;
     public JLabel swordLabel, shieldLabel , lanternLabel;
 
+    JLabel titleLabel;
+    JButton restartButton;
+
     public UI(GameManager gm){
         this.gm = gm;
         createMainField();
         createPlayerField();
+        createGameOverField();
         generateScreen();
         window.setVisible(true);
     }
@@ -171,7 +175,7 @@ public class UI {
         createObject(1,70,170, 150, 150, "guard.png",
                 "Look at the Guard", "Talk to Guard", "Attack the Guard" , "Look Guard" , "TalkToGuard" , "AttackGuard");
         createObject(1,250,220, 150, 130, "chest.png",
-                "Open the chest", "Leave it alone", "Search for keys" , "openChest" , "leaveAlone" , "searchKeys");
+                "Open the chest", "Leave it alone", "Search for keys" , "openChest" , "leaveAlone" , "search");
 
         createArrowButton(1, 0, 150, 50, 50, "left.png", "goScene2");
         createArrowButton(1, 650, 150, 50, 50, "right.png", "goScene3");
@@ -239,6 +243,26 @@ public class UI {
         inventoryPanel.add(swordLabel);
         inventoryPanel.add(shieldLabel);
         inventoryPanel.add(lanternLabel);
+    }
+
+    public void createGameOverField(){
+        titleLabel = new JLabel("Game Over");
+        titleLabel.setBounds(300, 150, 200, 50);
+        titleLabel.setFont(new Font("Time New Roman", Font.BOLD, 24));
+        titleLabel.setForeground(Color.RED);
+        titleLabel.setVisible(false);
+        window.add(titleLabel);
+
+        restartButton = new JButton("Restart");
+        restartButton.setBounds(330, 250, 120, 40);
+        restartButton.setFont(new Font("Time New Roman", Font.BOLD, 18));
+        restartButton.setBackground(Color.BLACK);
+        restartButton.setForeground(Color.WHITE);
+        restartButton.setVisible(false);
+
+        restartButton.addActionListener(gm.actionHandler);
+        restartButton.setActionCommand("restart");
+        window.add(restartButton);
     }
 
     public void typeText(String text) {
