@@ -30,6 +30,10 @@ public class SceneChanger {
         gm.ui.bgPanel[2].setVisible(false);
         gm.ui.bgPanel[3].setVisible(true);
         gm.ui.messageText.setText("You are in a dark forest. The trees are tall and the path is barely visible.");
+        // Trigger forest encounter when entering the scene
+        if (gm.event01 != null) {
+            gm.event01.enterForest();
+        }
     }
 
     public void showGameOverScreen(int currentBgNum){
@@ -54,13 +58,31 @@ public class SceneChanger {
     public void existsGameOverScreen(){
         gm.ui.titleLabel.setVisible(false);
         gm.ui.restartButton.setVisible(false);
-        // Remove any visible monsters and reset event state before resetting player
+        // Remove any visible monsters/chests and reset event state before resetting player
         if (gm.ui != null) {
             gm.ui.removeMonster();
+            gm.ui.removeGoldChest();
         }
         if (gm.event01 != null) {
             gm.event01.resetEvent();
         }
         gm.player.setPlayerDefaultStatus();
+    }
+
+    public void showVictoryScreen(){
+        // Configure title label (CONGRATULATIONS)
+        gm.ui.titleLabel.setText("CONGRATULATIONS");
+        gm.ui.titleLabel.setFont(new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 56));
+        gm.ui.titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        gm.ui.titleLabel.setBounds(100, 120, 600, 100);
+        gm.ui.titleLabel.setForeground(new Color(0, 128, 0));
+        gm.ui.titleLabel.setVisible(true);
+
+        // Show play again button
+        gm.ui.restartButton.setText("Play Again");
+        gm.ui.restartButton.setFont(new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 24));
+        gm.ui.restartButton.setBounds(250, 300, 300, 50);
+        gm.ui.restartButton.setBorderPainted(false);
+        gm.ui.restartButton.setVisible(true);
     }
 }

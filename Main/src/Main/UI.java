@@ -30,6 +30,14 @@ public class UI {
     public JLabel monsterLabel;
     public int monsterBgNum = -1;
 
+    // Gold chest UI reference
+    public JLabel goldChestLabel;
+    public int goldChestBgNum = -1;
+
+    // Archer UI reference
+    public JLabel archerLabel;
+    public int archerBgNum = -1;
+
     public UI(GameManager gm){
         this.gm = gm;
         createMainField();
@@ -195,6 +203,8 @@ public class UI {
         //Scene 3
         createBackground(3,"darkforest.png");
         createArrowButton(3, 0, 150, 50, 50, "left.png", "goScene1");
+        createObject(3,0,0,700,350, "darkforest.png",
+                "Look","Talk","Enter","lookIntoForest","talkInForest","enterForest");
         bgPanel[3].add(bgLabel[3]);
     }
 
@@ -320,6 +330,108 @@ public class UI {
             monsterBgNum = -1;
             bgPanel[prevBg].repaint();
             bgPanel[prevBg].revalidate();
+        }
+    }
+
+    // Show a golden chest in the given background (e.g., cave)
+    public void showGoldChest(int currentBgNum) {
+        removeGoldChest();
+
+        goldChestLabel = new JLabel();
+        goldChestBgNum = currentBgNum;
+
+        ImageIcon chestImage = new ImageIcon(getClass().getClassLoader().getResource("resources/images/gold_chest.png"));
+        Image image = chestImage.getImage();
+        Image scaledImage = image.getScaledInstance(120, 90, Image.SCALE_FAST);
+        chestImage = new ImageIcon(scaledImage);
+
+        goldChestLabel.setIcon(chestImage);
+        goldChestLabel.setBounds(290, 200, 120, 90);
+        goldChestLabel.setVisible(true);
+
+        JPopupMenu popup = new JPopupMenu();
+        JMenuItem open = new JMenuItem("Open");
+        open.addActionListener(gm.actionHandler);
+        open.setActionCommand("openGoldChest");
+        popup.add(open);
+
+        goldChestLabel.addMouseListener(new MouseListener() {
+            public void mouseClicked(MouseEvent e) {}
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e)) {
+                    popup.show(goldChestLabel, e.getX(), e.getY());
+                }
+            }
+            public void mouseReleased(MouseEvent e) {}
+            public void mouseEntered(MouseEvent e) {}
+            public void mouseExited(MouseEvent e) {}
+        });
+
+        bgPanel[currentBgNum].add(goldChestLabel);
+        bgPanel[currentBgNum].setComponentZOrder(goldChestLabel, 0);
+        bgPanel[currentBgNum].repaint();
+        bgPanel[currentBgNum].revalidate();
+    }
+
+    public void removeGoldChest() {
+        if (goldChestLabel != null && goldChestBgNum >= 0 && bgPanel[goldChestBgNum] != null) {
+            int prev = goldChestBgNum;
+            bgPanel[prev].remove(goldChestLabel);
+            goldChestLabel = null;
+            goldChestBgNum = -1;
+            bgPanel[prev].repaint();
+            bgPanel[prev].revalidate();
+        }
+    }
+
+    // Show an archer in the forest scene with a single 'Defend' option
+    public void showArcher(int currentBgNum) {
+        removeArcher();
+
+        archerLabel = new JLabel();
+        archerBgNum = currentBgNum;
+
+        ImageIcon archerImage = new ImageIcon(getClass().getClassLoader().getResource("resources/images/archer.png"));
+        Image image = archerImage.getImage();
+        Image scaledImage = image.getScaledInstance(120, 180, Image.SCALE_FAST);
+        archerImage = new ImageIcon(scaledImage);
+
+        archerLabel.setIcon(archerImage);
+        archerLabel.setBounds(550, 80, 120, 180);
+        archerLabel.setVisible(true);
+
+        JPopupMenu popup = new JPopupMenu();
+        JMenuItem defend = new JMenuItem("Defend");
+        defend.addActionListener(gm.actionHandler);
+        defend.setActionCommand("defendArcher");
+        popup.add(defend);
+
+        archerLabel.addMouseListener(new MouseListener() {
+            public void mouseClicked(MouseEvent e) {}
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e)) {
+                    popup.show(archerLabel, e.getX(), e.getY());
+                }
+            }
+            public void mouseReleased(MouseEvent e) {}
+            public void mouseEntered(MouseEvent e) {}
+            public void mouseExited(MouseEvent e) {}
+        });
+
+        bgPanel[currentBgNum].add(archerLabel);
+        bgPanel[currentBgNum].setComponentZOrder(archerLabel, 0);
+        bgPanel[currentBgNum].repaint();
+        bgPanel[currentBgNum].revalidate();
+    }
+
+    public void removeArcher() {
+        if (archerLabel != null && archerBgNum >= 0 && bgPanel[archerBgNum] != null) {
+            int prev = archerBgNum;
+            bgPanel[prev].remove(archerLabel);
+            archerLabel = null;
+            archerBgNum = -1;
+            bgPanel[prev].repaint();
+            bgPanel[prev].revalidate();
         }
     }
 

@@ -109,18 +109,31 @@ public class Event01 {
 
     private int monsterLife = 0;
     private boolean monsterDefeated = false;
+    private boolean goldChestTaken = false;
 
     public void enterCave(){
-        // If player has sword, start the monster encounter in the cave
+        // If player has sword, handle monster encounter first
         if (gm.player.hasSword == 1) {
-            if (monsterDefeated) {
-                gm.ui.typeText("The cave is quiet now. The Monster has already been defeated.");
+            if (!monsterDefeated) {
+                startMonsterEncounter();
+                return;
+            } else {
+                // Monster already defeated
+                if (gm.player.hasLantern == 1) {
+                    if (!goldChestTaken) {
+                        gm.ui.typeText("The Monster is dead. The cave is lit by your lantern. You see a golden chest.");
+                        gm.ui.showGoldChest(2);
+                    } else {
+                        gm.ui.typeText("The cave is quiet now. You already took the golden chest.");
+                    }
+                } else {
+                    gm.ui.typeText("The Monster is dead, but the cave is still dark. Maybe a lantern would help you find something.");
+                }
                 return;
             }
-            startMonsterEncounter();
-            return;
         }
 
+        // If player doesn't have a sword, original lantern/dark logic
         if (gm.player.hasLantern == 1) {
             gm.ui.typeText("You enter the cave with your lantern and found the Key.");
         } else {
@@ -189,11 +202,80 @@ public class Event01 {
         }
     }
 
+    // Open the golden chest in the cave (finish the game)
+    public void openGoldChest() {
+        if (goldChestTaken) {
+            gm.ui.typeText("You already took the golden chest.");
+            return;
+        }
+        goldChestTaken = true;
+        gm.ui.typeText("You opened the golden chest and found untold riches!\nCongratulations.You've finished the game.");
+        gm.ui.removeGoldChest();
+        gm.sceneChanger.showVictoryScreen();
+    }
+
+    public void leaveGoldChest() {
+        gm.ui.typeText("You decide to leave the golden chest for now.");
+    }
+
+    public void lookIntoForest(){
+        gm.ui.typeText("The forest is dark and dense. You can barely see the path ahead.");
+    }
+
+    public void talkInForest(){
+        gm.ui.typeText("You shout into the forest, but there is no response. The forest seems to be alive with the sounds of wildlife.");
+    }
+
+    private boolean archerPresent = false;
+
+    public void enterForest(){
+        // If lantern already obtained, nothing to do
+        if (gm.player.hasLantern == 1) {
+            gm.ui.typeText("The forest is peaceful now. You've already searched it.");
+            return;
+        }
+
+        // Show archer and prompt player to defend (right-click)
+        gm.ui.showArcher(3);
+        gm.ui.typeText("An archer appears in the trees! Right-click the archer and choose 'Defend'.");
+        archerPresent = true;
+    }
+
+    // Called when player chooses to defend against the archer
+    public void defendArcher() {
+        // If archer not present, ignore
+        if (!archerPresent) {
+            gm.ui.typeText("There is no archer to defend against.");
+            return;
+        }
+
+        if (gm.player.hasShield == 0) {
+            gm.ui.typeText("You try to defend but you have no shield. The arrow strikes you down.");
+            gm.player.playerLife = 0;
+            gm.player.updatePlayerStatus();
+            gm.sceneChanger.showGameOverScreen(3);
+        } else {
+            gm.ui.typeText("You raise your shield and block the arrows!\nAmong the bushes you find a lantern.");
+            gm.player.hasLantern = 1;
+            gm.player.updatePlayerStatus();
+            gm.ui.removeArcher();
+            archerPresent = false;
+        }
+    }
+
     // Reset event state (used when restarting the game)
     public void resetEvent() {
         caveVisitCount = 0;
         monsterLife = 0;
         monsterDefeated = false;
+        goldChestTaken = false;
+        archerPresent = false;
+        // Ensure UI chests/monsters/archer are removed
+        if (gm.ui != null) {
+            gm.ui.removeGoldChest();
+            gm.ui.removeMonster();
+            gm.ui.removeArcher();
+        }
     }
 }
 

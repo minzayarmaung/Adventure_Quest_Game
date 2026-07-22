@@ -53,6 +53,12 @@ public class ActionHandler implements ActionListener {
             case "attackMonster":
                 gm.event01.attackMonster();
                 break;
+            case "defendArcher":
+                gm.event01.defendArcher();
+                break;
+            case "openGoldChest":
+                gm.event01.openGoldChest();
+                break;
             // Change Scenes
             case "goScene1":
                 gm.sceneChanger.showScene1();
