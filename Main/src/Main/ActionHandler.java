@@ -19,6 +19,14 @@ public class ActionHandler implements ActionListener {
             return;
         }
 
+        // Prevent scene changes while a live monster is present
+        if (gm.event01 != null && gm.event01.isMonsterActive()) {
+            if ("goScene1".equals(command) || "goScene2".equals(command) || "goScene3".equals(command)) {
+                gm.ui.messageText.setText("You can't leave while fighting the Monster!");
+                return;
+            }
+        }
+
         switch(command){
             case "lookHut":
                 gm.event01.lookHut();

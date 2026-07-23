@@ -25,6 +25,24 @@ public class GameManager {
         this.gameOver = gameOver;
     }
 
+    private boolean monsterAppear = false;
+    public boolean isMonsterAppear(){
+        return monsterAppear;
+    }
+
+    public void setMonsterAppear(boolean monsterAppear){
+        this.monsterAppear = monsterAppear;
+    }
+
+    private boolean monsterDefeated = false;
+    public boolean isMonsterDefeated(){
+        return monsterDefeated;
+    }
+
+    public void setMonsterDefeated(boolean monsterDefeated){
+        this.monsterDefeated = monsterDefeated;
+    }
+
     // SOUND
     public URL fieldMusic    = getClass().getResource("/resources/music/bensound-acousticbreeze.wav");
     public URL fieldMusic2   = getClass().getResource("/resources/music/bensound-ofeliasdream.wav");

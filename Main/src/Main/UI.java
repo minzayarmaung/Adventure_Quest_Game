@@ -197,7 +197,10 @@ public class UI {
         createBackground(2, "cavee.png");
         createObject(2,0,0,700,350, "cavee.png",
                 "Look","Talk","Enter","lookIntoCave","talkInCave","enterCave");
-        createArrowButton(2, 650, 150, 50, 50, "right.png", "goScene1");
+
+        if(!gm.isMonsterAppear() || gm.isMonsterDefeated()){
+            createArrowButton(2, 650, 150, 50, 50, "right.png", "goScene1");
+        }
         bgPanel[2].add(bgLabel[2]);
 
         //Scene 3
