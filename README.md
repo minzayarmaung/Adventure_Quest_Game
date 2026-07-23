@@ -1,4 +1,4 @@
-# 🎮 Pixel Adventure
+# 🎮 Legends of the Shattered Realm
 > *A retro pixel-art indie adventure built with passion.*
 
 <p align="center">
@@ -81,7 +81,7 @@ This project was created as a personal indie game to practice game development, 
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/your-game.git
+git clone [https://github.com/yourusername/your-game.git](https://github.com/minzayarmaung/Adventure_Quest_Game)
 ```
 
 Open the project using your preferred game engine and run it.
