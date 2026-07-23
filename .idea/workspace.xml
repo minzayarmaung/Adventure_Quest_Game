@@ -1,49 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BackgroundAgentGlobalSettings">
     <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59b5aed-3cf0-4af8-97c2-998e7c3c8c27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Main/src/Main/Music.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/src/Main/SE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Main_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/resources/images/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Event/Event01.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Event/Event01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/Main/SceneChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/SceneChanger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/arrow_1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/bensound-acousticbreeze.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/bensound-ofeliasdream.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/cave_1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/death.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/enter.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/forest_1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/guard1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/guard_2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/guard_3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/heal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/itemSound.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/monster_1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/monster_2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/monster_3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/Event/Event01.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Event/Event01.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/ActionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/ActionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/SceneChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/SceneChanger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/arrow_1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/bensound-acousticbreeze.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/bensound-ofeliasdream.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/death.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/enter.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/guard1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/guard_2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/guard_3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/heal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/itemSound.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/monster_1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/monster_2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/monster_3.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +81,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "copilot.chat.legacySessionMetadata.migrated": "true",
     "git-widget-placeholder": "main",
@@ -122,10 +91,10 @@
     "node.js.selected.package.jshint": "",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/home/minzayar/Data/Personal/Adventure_Quest_Game/Main/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.editor"
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.10384214",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -185,5 +154,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
