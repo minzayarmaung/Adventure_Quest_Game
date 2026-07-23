@@ -29,16 +29,26 @@ jobs:
       # Step 2: Create the JAR file with your Main-Class manifest entry
       - name: Create Executable JAR
         run: |
-          mkdir artifact
-          jar cfe artifact/Main.jar Main -C bin .
+          mkdir -p artifact
+          # Use the fully-qualified main class (package.MainClass)
+          jar cfe artifact/Main.jar Main.GameManager -C bin .
+          echo "Created files in artifact:" && ls -la artifact || true
+
+      # Debug: list directories before jpackage
+      - name: Debug - show build outputs
+        run: |
+          echo "Contents of workspace:" && ls -la
+          echo "Contents of bin:" && ls -la bin || true
+          echo "Contents of artifact:" && ls -la artifact || true
 
       # Step 3: Package into Windows EXE installer
       - name: Package Executable with jpackage
-        run: jpackage --input artifact --name "AdventureQuest" --main-jar Main.jar --type exe --win-shortcut --win-menu
+        run: |
+          jpackage --input artifact --name "AdventureQuest" --main-jar Main.jar --main-class Main.GameManager --type exe --win-shortcut --win-menu
 
       # Step 4: Upload generated installer artifact
       - name: Upload Windows EXE Release Artifact
         uses: actions/upload-artifact@v4
         with:
           name: AdventureQuest-Windows-Installer
-          path: AdventureQuest*.exe
+          path: artifact/*.exe
