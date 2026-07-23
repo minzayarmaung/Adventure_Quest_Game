@@ -21,11 +21,11 @@ jobs:
 
       - name: Package Executable with jpackage
         run: |
-          jpackage --input Main/out/artifacts/Main_jar \
-                   --name "AdventureQuest" \
-                   --main-jar Main.jar \
-                   --type exe \
-                   --win-shortcut \
+          jpackage --input Main/out/artifacts/Main_jar `
+                   --name "AdventureQuest" `
+                   --main-jar Main.jar `
+                   --type exe `
+                   --win-shortcut `
                    --win-menu
 
       - name: Upload Windows EXE Release Artifact
