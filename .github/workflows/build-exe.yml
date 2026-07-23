@@ -19,9 +19,24 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Package Executable with jpackage
-        run: jpackage --input Main/out/artifacts/Main_jar --name "AdventureQuest" --main-jar Main.jar --type exe --win-shortcut --win-menu
+      # Step 1: Compile all Java source files into a 'bin' directory
+      - name: Compile Java Sources
+        run: |
+          mkdir bin
+          Get-ChildItem -Path Main/src -Filter *.java -Recurse | ForEach-Object { $_.FullName } | Out-File -FilePath sources.txt -Encoding ascii
+          javac -d bin @sources.txt
 
+      # Step 2: Create the JAR file with your Main-Class manifest entry
+      - name: Create Executable JAR
+        run: |
+          mkdir artifact
+          jar cfe artifact/Main.jar Main -C bin .
+
+      # Step 3: Package into Windows EXE installer
+      - name: Package Executable with jpackage
+        run: jpackage --input artifact --name "AdventureQuest" --main-jar Main.jar --type exe --win-shortcut --win-menu
+
+      # Step 4: Upload generated installer artifact
       - name: Upload Windows EXE Release Artifact
         uses: actions/upload-artifact@v4
         with:
