@@ -183,31 +183,30 @@ public class UI {
         //Scene 1
         createBackground(1, "bg.jpeg");
         createObject(1,450,130, 200, 200, "hut.png",
-                "Look", "Talk", "Rest" , "lookHut" , "talkHut" , "restHut");
+                "Look", "Talk", "Rest" , Commands.LOOK_HUT , Commands.TALK_HUT , Commands.REST_HUT);
         createObject(1,70,170, 150, 150, "guard.png",
-                "Look at the Guard", "Talk to Guard", "Attack the Guard" , "Look Guard" , "TalkToGuard" , "AttackGuard");
+                "Look at the Guard", "Talk to Guard", "Attack the Guard" , Commands.LOOK_GUARD , Commands.TALK_GUARD , Commands.ATTACK_GUARD);
         createObject(1,250,220, 150, 130, "chest.png",
-                "Open the chest", "Leave it alone", "Search for keys" , "openChest" , "leaveAlone" , "search");
+                "Open the chest", "Leave it alone", "Search for keys" , Commands.OPEN_CHEST , Commands.LEAVE_CHEST , Commands.SEARCH_CHEST);
 
-        createArrowButton(1, 0, 150, 50, 50, "left.png", "goScene2");
-        createArrowButton(1, 650, 150, 50, 50, "right.png", "goScene3");
+        createArrowButton(1, 0, 150, 50, 50, "left.png", Commands.GO_SCENE_2);
+        createArrowButton(1, 650, 150, 50, 50, "right.png", Commands.GO_SCENE_3);
         bgPanel[1].add(bgLabel[1]);
 
         //Scene 2
         createBackground(2, "cavee.png");
         createObject(2,0,0,700,350, "cavee.png",
-                "Look","Talk","Enter","lookIntoCave","talkInCave","enterCave");
+                "Look","Talk","Enter",Commands.LOOK_INTO_CAVE,Commands.TALK_IN_CAVE,Commands.ENTER_CAVE);
 
-        if(!gm.isMonsterAppear() || gm.isMonsterDefeated()){
-            createArrowButton(2, 650, 150, 50, 50, "right.png", "goScene1");
-        }
+        // Always allow the right-arrow to be present; navigation is guarded centrally
+        createArrowButton(2, 650, 150, 50, 50, "right.png", Commands.GO_SCENE_1);
         bgPanel[2].add(bgLabel[2]);
 
         //Scene 3
         createBackground(3,"darkforest.png");
-        createArrowButton(3, 0, 150, 50, 50, "left.png", "goScene1");
+        createArrowButton(3, 0, 150, 50, 50, "left.png", Commands.GO_SCENE_1);
         createObject(3,0,0,700,350, "darkforest.png",
-                "Look","Talk","Enter","lookIntoForest","talkInForest","enterForest");
+                "Look","Talk","Enter",Commands.LOOK_INTO_FOREST,Commands.TALK_IN_FOREST,Commands.ENTER_FOREST);
         bgPanel[3].add(bgLabel[3]);
     }
 
@@ -278,7 +277,7 @@ public class UI {
         restartButton.setVisible(false);
 
         restartButton.addActionListener(gm.actionHandler);
-        restartButton.setActionCommand("restart");
+        restartButton.setActionCommand(Commands.RESTART);
         window.add(restartButton);
     }
 
@@ -302,7 +301,7 @@ public class UI {
         JPopupMenu popupMenu = new JPopupMenu();
         JMenuItem attackItem = new JMenuItem("Attack");
         attackItem.addActionListener(gm.actionHandler);
-        attackItem.setActionCommand("attackMonster");
+        attackItem.setActionCommand(Commands.ATTACK_MONSTER);
         popupMenu.add(attackItem);
 
         monsterLabel.addMouseListener(new MouseListener() {
@@ -355,7 +354,7 @@ public class UI {
         JPopupMenu popup = new JPopupMenu();
         JMenuItem open = new JMenuItem("Open");
         open.addActionListener(gm.actionHandler);
-        open.setActionCommand("openGoldChest");
+        open.setActionCommand(Commands.OPEN_GOLD_CHEST);
         popup.add(open);
 
         goldChestLabel.addMouseListener(new MouseListener() {
@@ -406,7 +405,7 @@ public class UI {
         JPopupMenu popup = new JPopupMenu();
         JMenuItem defend = new JMenuItem("Defend");
         defend.addActionListener(gm.actionHandler);
-        defend.setActionCommand("defendArcher");
+        defend.setActionCommand(Commands.DEFEND_ARCHER);
         popup.add(defend);
 
         archerLabel.addMouseListener(new MouseListener() {

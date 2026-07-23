@@ -178,7 +178,6 @@ public class Event01 {
     // Start the monster fight. Only allowed when player has a sword.
     public void startMonsterEncounter() {
         // Initialize monster lives and show it in the cave
-        gm.setMonsterAppear(true);
         monsterLife = 3;
         gm.ui.showMonster(2);
         gm.ui.typeText("A Monster appears! It has 3 hearts. Right-click it and choose 'Attack'.\nWhen you attack, it will hit you back.");
@@ -219,7 +218,6 @@ public class Event01 {
 
         // Mutual damage: player attacks monster and monster hits back
         gm.playSE(gm.hitSound);
-        gm.setMonsterAppear(true);
         monsterLife--;
         gm.player.playerLife--;
         gm.player.updatePlayerStatus();
@@ -239,10 +237,11 @@ public class Event01 {
         } else {
             // Monster defeated
             monsterDefeated = true;
-            gm.setMonsterDefeated(true);
             gm.ui.typeText("You struck the final blow and defeated the Monster!\nYou can continue your journey.");
             gm.player.updatePlayerStatus();
             gm.ui.removeMonster();
+            gm.stopMusic(gm.battleMusic);
+            gm.playSE(gm.victoryMusic);
         }
     }
 

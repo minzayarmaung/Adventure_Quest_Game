@@ -25,22 +25,26 @@ public class GameManager {
         this.gameOver = gameOver;
     }
 
-    private boolean monsterAppear = false;
-    public boolean isMonsterAppear(){
-        return monsterAppear;
-    }
+    /**
+     * Centralized permission checks for actions. Keeps authorization logic in one place
+     * so new rules can be added without changing the ActionHandler.
+     */
+    public boolean isActionAllowed(String command) {
+        // When game is finished only restart allowed
+        if (isGameOver() && !Commands.RESTART.equals(command)) {
+            return false;
+        }
 
-    public void setMonsterAppear(boolean monsterAppear){
-        this.monsterAppear = monsterAppear;
-    }
+        // If there's an active monster fight, block scene navigation
+        if (event01 != null && event01.isMonsterActive()) {
+            if (Commands.GO_SCENE_1.equals(command) || Commands.GO_SCENE_2.equals(command)
+                    || Commands.GO_SCENE_3.equals(command)) {
+                return false;
+            }
+        }
 
-    private boolean monsterDefeated = false;
-    public boolean isMonsterDefeated(){
-        return monsterDefeated;
-    }
-
-    public void setMonsterDefeated(boolean monsterDefeated){
-        this.monsterDefeated = monsterDefeated;
+        // Default: allow
+        return true;
     }
 
     // SOUND
@@ -64,6 +68,7 @@ public class GameManager {
     public URL caveSound     = getClass().getResource("/resources/music/cave_1.wav");
     public URL forestSound   = getClass().getResource("/resources/music/forest_1.wav");
     public URL battleMusic   = getClass().getResource("/resources/music/battle.wav");
+    public URL victoryMusic  = getClass().getResource("/resources/music/victory.wav");
     public URL currentMusic;
 
     public static void main(String[] args) {

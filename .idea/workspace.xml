@@ -13,7 +13,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59b5aed-3cf0-4af8-97c2-998e7c3c8c27" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/Event/Event01.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Event/Event01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/Main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/GameManager.java" afterDir="false" />
