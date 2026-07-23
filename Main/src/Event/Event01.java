@@ -148,11 +148,13 @@ public class Event01 {
             }
         }
 
+
         // If player doesn't have a sword, original lantern/dark logic
         if (gm.player.hasLantern == 1) {
             gm.ui.typeText("You enter the cave with your lantern and found the Key.");
         } else {
             if (caveVisitCount == 1) {
+                gm.playSE(gm.monsterSound2);
                 gm.ui.typeText("Monster : GRRRRRRRR!\nThe Monster attacked you.\n(Hint: You need a lantern to enter the cave.)");
                 gm.player.playerLife = 0;
                 gm.player.updatePlayerStatus();

@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+
 jobs:
   build-windows:
     runs-on: windows-latest
@@ -19,26 +22,29 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      # Step 1: Compile all Java source files into a 'bin' directory
       - name: Compile Java Sources
         run: |
           mkdir bin
           Get-ChildItem -Path Main/src -Filter *.java -Recurse | ForEach-Object { $_.FullName } | Out-File -FilePath sources.txt -Encoding ascii
           javac -d bin "@sources.txt"
 
-      # Step 2: Create the JAR file with your Main-Class manifest entry
       - name: Create Executable JAR
         run: |
           mkdir artifact
           jar cfe artifact/Main.jar Main.GameManager -C bin .
 
-      # Step 3: Package into Windows EXE installer
       - name: Package Executable with jpackage
         run: jpackage --input artifact --name "AdventureQuest" --main-jar Main.jar --main-class Main.GameManager --type exe --win-shortcut --win-menu
 
-      # Step 4: Upload generated installer artifact
       - name: Upload Windows EXE Release Artifact
         uses: actions/upload-artifact@v4
         with:
           name: AdventureQuest-Windows-Installer
           path: AdventureQuest*.exe
+
+      - name: Publish EXE to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: AdventureQuest*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
