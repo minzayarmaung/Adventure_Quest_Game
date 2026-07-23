@@ -13,6 +13,12 @@ public class ActionHandler implements ActionListener {
     public void actionPerformed(java.awt.event.ActionEvent e) {
         String command = e.getActionCommand();
 
+        // If the game is finished, ignore all actions except restart
+        if (gm.isGameOver() && !"restart".equals(command)) {
+            gm.ui.messageText.setText("Game is over. Click restart to play again.");
+            return;
+        }
+
         switch(command){
             case "lookHut":
                 gm.event01.lookHut();

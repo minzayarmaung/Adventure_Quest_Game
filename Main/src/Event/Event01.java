@@ -13,6 +13,7 @@ public class Event01 {
 
     public void lookHut() {
         gm.ui.typeText("Inside the hut, you see a small bed, a table with some food, and a chest in the corner.");
+        gm.playSE(gm.enterSound);
     }
 
     public void talkHut() {
@@ -24,6 +25,7 @@ public class Event01 {
             gm.ui.messageText.setText("You rest at the house.\n(Your Life has been Recovered)");
             gm.player.playerLife++;
             gm.player.updatePlayerStatus();
+            gm.playSE(gm.healSound);
         } else {
             gm.ui.messageText.setText("Your Life is Full.");
         }
@@ -35,6 +37,7 @@ public class Event01 {
 
     public void talkToGuard() {
         gm.ui.typeText("Guard : Stay Away, Fool!");
+        gm.playSE(gm.guardSound4);
     }
 
     public void attackGuard() {
@@ -42,12 +45,14 @@ public class Event01 {
         if (gm.player.playerLife <= 0) {
             gm.ui.messageText.setText("You are defeated. Restart to try again.");
             gm.sceneChanger.showGameOverScreen(1);
+            gm.playSE(gm.guardSound3);
             return;
         }
 
         // 2. Check if the guard was already defeated (player already has the shield)
         if (gm.player.hasShield != 0) {
             gm.ui.typeText("Guard : Just leave me alone.");
+            gm.playSE(gm.guardSound6);
             return;
         }
 
@@ -56,21 +61,28 @@ public class Event01 {
             // Dialogue depending on current health (before taking damage)
             if (gm.player.playerLife == 3) {
                 gm.ui.typeText("Guard : Hey, Don't be Stupid!\n(The guard hits you back and your life decreases by 1)");
+                gm.playSE(gm.guardSound1);
             } else if (gm.player.playerLife == 2) {
                 gm.ui.typeText("Guard : Hey, Stop it!\n(The guard hits you back and your life decreases by 1)");
+                gm.playSE(gm.guardSound2);
             } else if (gm.player.playerLife == 1) {
                 gm.ui.typeText("Guard : Hey, I'm Warning You!\n(The guard hits you back and your life decreases by 1)");
             } else {
                 gm.ui.typeText("Guard : Don't touch me!\n(The guard hits you back and your life decreases by 1)");
             }
 
+            gm.playSE(gm.hitSound);
             gm.player.playerLife--;
             gm.player.updatePlayerStatus();
 
             // If the player just dropped to 0 or below, show game over
             if (gm.player.playerLife <= 0) {
                 gm.ui.typeText("Guard : What a Fool!");
+                gm.currentMusic = gm.guardSound3;
+                gm.playSE(gm.currentMusic);
                 gm.sceneChanger.showGameOverScreen(1);
+                gm.stopMusic(gm.currentMusic);
+                gm.playMusic(gm.fieldMusic2);
             }
         }
         // 4. Combat logic with a sword
@@ -78,6 +90,8 @@ public class Event01 {
             gm.ui.typeText("Guard : Oh, Shit!\n(You have defeated the guard and gotten his shield!)");
             gm.player.hasShield = 1;
             gm.player.updatePlayerStatus();
+            gm.playSE(gm.guardSound5);
+            gm.playSE(gm.itemSound);
         }
     }
 
@@ -86,6 +100,7 @@ public class Event01 {
             gm.player.hasSword = 1;
             gm.player.updatePlayerStatus();
             gm.ui.typeText("You open the chest and found the Sword.");
+            gm.playSE(gm.itemSound);
         } else {
             gm.ui.typeText("The Chest is Empty.");
         }
@@ -159,6 +174,8 @@ public class Event01 {
         monsterLife = 3;
         gm.ui.showMonster(2);
         gm.ui.typeText("A Monster appears! It has 3 hearts. Right-click it and choose 'Attack'.\nWhen you attack, it will hit you back.");
+        gm.playMusic(gm.battleMusic);
+        gm.playSE(gm.monsterSound3);
     }
 
     // Called when player chooses to attack the monster
@@ -166,6 +183,18 @@ public class Event01 {
         if (gm.player.hasSword == 0) {
             gm.ui.typeText("You don't have a sword to attack the Monster.");
             return;
+        }
+
+        if (monsterLife == 3){
+            gm.playSE(gm.monsterSound3);
+        }
+
+        if (monsterLife == 2){
+            gm.playSE(gm.monsterSound2);
+        }
+
+        if (monsterLife == 1){
+            gm.playSE(gm.monsterSound1);
         }
 
         if (monsterLife <= 0) {
@@ -176,10 +205,12 @@ public class Event01 {
         if (gm.player.playerLife <= 0) {
             gm.ui.typeText("You are already defeated. Restart to try again.");
             gm.sceneChanger.showGameOverScreen(2);
+            gm.playSE(gm.deathSound);
             return;
         }
 
         // Mutual damage: player attacks monster and monster hits back
+        gm.playSE(gm.hitSound);
         monsterLife--;
         gm.player.playerLife--;
         gm.player.updatePlayerStatus();
@@ -188,6 +219,9 @@ public class Event01 {
             gm.ui.typeText("The Monster struck back and you died.");
             gm.ui.showMonster(2);
             gm.sceneChanger.showGameOverScreen(2);
+            gm.stopMusic(gm.currentMusic);
+            gm.playMusic(gm.fieldMusic2);
+            gm.playSE(gm.deathSound);
             return;
         }
 
@@ -209,6 +243,7 @@ public class Event01 {
             return;
         }
         goldChestTaken = true;
+        gm.playSE(gm.itemSound);
         gm.ui.typeText("You opened the golden chest and found untold riches!\nCongratulations.You've finished the game.");
         gm.ui.removeGoldChest();
         gm.sceneChanger.showVictoryScreen();
@@ -238,6 +273,7 @@ public class Event01 {
         // Show archer and prompt player to defend (right-click)
         gm.ui.showArcher(3);
         gm.ui.typeText("An archer appears in the trees! Right-click the archer and choose 'Defend'.");
+        gm.playSE(gm.arrowSound);
         archerPresent = true;
     }
 
@@ -254,11 +290,14 @@ public class Event01 {
             gm.player.playerLife = 0;
             gm.player.updatePlayerStatus();
             gm.sceneChanger.showGameOverScreen(3);
+            gm.stopMusic(gm.currentMusic);
+            gm.playMusic(gm.fieldMusic2);
         } else {
             gm.ui.typeText("You raise your shield and block the arrows!\nAmong the bushes you find a lantern.");
             gm.player.hasLantern = 1;
             gm.player.updatePlayerStatus();
             gm.ui.removeArcher();
+            gm.playSE(gm.itemSound);
             archerPresent = false;
         }
     }

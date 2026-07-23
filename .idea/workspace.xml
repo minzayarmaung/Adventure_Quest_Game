@@ -5,8 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59b5aed-3cf0-4af8-97c2-998e7c3c8c27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Main/src/Main/Music.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/src/Main/SE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Event/Event01.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Event/Event01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/ActionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/Main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/Main/SceneChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/Main/SceneChanger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/arrow_1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/bensound-acousticbreeze.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/bensound-ofeliasdream.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/cave_1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/death.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/enter.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/forest_1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/guard1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/guard_2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/guard_3.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/heal.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/itemSound.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/monster_1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/monster_2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/music/monster_3.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Event/Event01.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Event/Event01.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/ActionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/ActionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/GameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/Main/SceneChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Main/Main/SceneChanger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/arrow_1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/bensound-acousticbreeze.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/bensound-ofeliasdream.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/death.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/enter.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/guard1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/guard_2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/guard_3.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/heal.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/itemSound.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/monster_1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/monster_2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Main/resources/music/monster_3.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +65,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.sdkman/candidates/java/21.0.11-oracle/lib/src.zip!/java.desktop/javax/sound/sampled/AudioSystem.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1,
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3Gnt7GAZMNPIY6YmaPxHs0FMGYt" />
   <component name="ProjectSessionTemplates">
+    <option name="inlineTemplate">
+      <template>
+        <option name="modeId" value="InlineAgent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="LOCAL" />
+      </template>
+    </option>
     <option name="panelTemplate">
       <template>
         <option name="modeId" value="Agent" />
@@ -124,7 +176,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Main/src/Event/Event01.java</url>
-          <line>230</line>
+          <line>265</line>
           <properties class="Event.Event01" method="enterForest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
