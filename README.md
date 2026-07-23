@@ -1,43 +1,42 @@
 # 🎮 Legends of the Shattered Realm
-> *A retro pixel-art indie adventure built with passion.*
+
+> *A retro pixel-art indie adventure forged with passion.*
 
 <p align="center">
   <img src="./docs/banner.gif" width="100%">
 </p>
 
 <p align="center">
-
-![Version](https://img.shields.io/badge/Version-v1.0-blue)
-![Status](https://img.shields.io/badge/Status-Released-success)
-![License](https://img.shields.io/badge/License-MIT-green)
-
+  <img src="https://img.shields.io/badge/Version-v1.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/Status-Released-success" alt="Status">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
 </p>
 
 ---
 
 ## 📖 About
 
-Welcome to **Pixel Adventure**, a nostalgic pixel-style indie game inspired by classic retro platformers.
+**Legends of the Shattered Realm** is a nostalgic pixel-art indie adventure inspired by classic retro action RPGs and platformers.
 
-Explore mysterious worlds, battle enemies, discover hidden secrets, and enjoy relaxing retro music while progressing through handcrafted levels.
+Explore mysterious lands, battle dangerous enemies, uncover hidden secrets, and journey through handcrafted environments while enjoying atmospheric retro music.
 
-This project was created as a personal indie game to practice game development, level design, animation, and gameplay programming.
+This project was created as a personal indie game to practice **game development, level design, animation, combat systems, and gameplay programming** using pure Java.
 
 ---
 
 ## ✨ Features
 
-- 🎨 Beautiful Pixel Art
-- ⚔️ Smooth Combat System
-- 👾 Enemy AI
-- 🏃 Player Movement & Animation
-- ❤️ Health System
-- 💰 Coin Collection
-- 🔊 Retro Sound Effects
-- 🎵 Background Music
-- 💾 Save Progress
-- 🗺️ Multiple Maps
-- 🎮 Keyboard Controller Support
+* 🎨 Handcrafted pixel-art visuals
+* ⚔️ Smooth combat system
+* 👾 Enemy AI
+* 🏃 Player movement & animation
+* ❤️ Health system
+* 💰 Coin collection
+* 🔊 Retro sound effects
+* 🎵 Background music
+* 💾 Save progress
+* 🗺️ Multiple maps
+* 🎮 Keyboard controls
 
 ---
 
@@ -46,159 +45,160 @@ This project was created as a personal indie game to practice game development, 
 ### Main Menu
 
 <p align="center">
-<img src="docs/images/menu.png" width="800">
+  <img src="docs/images/menu.png" width="800">
 </p>
-
----
 
 ### Gameplay
 
-<img width="796" height="587" alt="image" src="https://github.com/user-attachments/assets/687f3435-721c-4399-af8b-a835f8539879" /> <img width="796" height="586" alt="image" src="https://github.com/user-attachments/assets/6e6ad31f-e758-4c7d-9bdc-5eb95ff3296a" /> <img width="796" height="586" alt="image" src="https://github.com/user-attachments/assets/12c356aa-9f9a-4c48-b9bd-374b399fdfa6" />
----
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/687f3435-721c-4399-af8b-a835f8539879" width="800">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6e6ad31f-e758-4c7d-9bdc-5eb95ff3296a" width="800">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/12c356aa-9f9a-4c48-b9bd-374b399fdfa6" width="800">
+</p>
 
 ### Battle
 
 <p align="center">
-<img src="docs/images/battle.png" width="800">
+  <img src="docs/images/battle.png" width="800">
 </p>
 
 ---
 
 ## 🎮 Controls
 
-| Key | Action |
-|------|--------|
-| A / ← | Move Left |
-| D / → | Move Right |
-| Space | Jump |
-| Left Mouse | Attack |
-| ESC | Pause |
+The entire game is played using only the mouse.
+
+| Mouse Action | Function |
+|--------------|----------|
+| **Left Click** | Interact with objects, select actions, and confirm choices. |
+| **Right Click** | Open the context menu to view available options and actions. |
 
 ---
 
 ## 🚀 Installation
 
-Clone the repository
+Clone the repository:
 
 ```bash
-git clone [https://github.com/yourusername/your-game.git](https://github.com/minzayarmaung/Adventure_Quest_Game)
+git clone https://github.com/minzayarmaung/Adventure_Quest_Game.git
 ```
 
-Open the project using your preferred game engine and run it.
+Then open the project in your Java IDE (IntelliJ IDEA, Eclipse, or NetBeans) and run the main game class.
+
+### Requirements
+
+* Java 17+ (recommended)
+* A Java IDE or command-line Java environment
 
 ---
 
 ## 🛠️ Built With
 
-- Game Engine: Pure Java Swing
-- Language: Java
-- Pixel Art
-- Tilemap System
+* **Language:** Java
+* **Framework:** Pure Java Swing
+* **Graphics:** Pixel Art
+* **Rendering:** Tilemap-based 2D engine
+* **Audio:** Java Sound API
 
 ---
 
 ## 📂 Project Structure
 
-```
+```text
 Assets/
  ├── Animations/
  ├── Audio/
- ├── Materials/
- ├── Prefabs/
- ├── Scenes/
- ├── Scripts/
  ├── Sprites/
+ ├── Tiles/
  └── UI/
+
+src/
+ ├── entity/
+ ├── object/
+ ├── tile/
+ ├── ui/
+ └── main/
 ```
 
 ---
 
-# ❤️ Credits
+## ❤️ Credits
 
 This game would not be possible without these amazing free resources.
 
-## 🎨 Art Assets
+### 🎨 Art Assets
 
-| Resource | Author |
-|----------|---------|
-[| Pixel Characters | Author Name |
-| Environment Tiles | Author Name |
-| UI Icons | Author Name |
-](https://pixabay.com
-https://game-icons.net/
-https://www.ac-illust.com/)
----
+| Resource                    | Source                    |
+| --------------------------- | ------------------------- |
+| Pixel art assets            | https://pixabay.com       |
+| Game icons                  | https://game-icons.net    |
+| Illustrations & UI elements | https://www.ac-illust.com |
 
-## 🎵 Music
+### 🎵 Music
 
-| Music | Author |
-|--------|---------|
-Acoustic Breeze (https://www.bensound.com)
-Ofelia's Dream (https://www.bensound.com)
+| Track           | Source                   |
+| --------------- | ------------------------ |
+| Acoustic Breeze | https://www.bensound.com |
+| Ofelia's Dream  | https://www.bensound.com |
 
----
+### 🔊 Sound Effects
 
-## 🔊 Sound Effects
-
-- OpenGameArt
-- Kenney
-- Pixabay
+* OpenGameArt — https://opengameart.org
+* Kenney — https://kenney.nl/assets
+* Pixabay — https://pixabay.com/sound-effects/
 
 ---
 
 ## 🙏 Special Thanks
 
-Huge thanks to all artists, musicians, and open-source creators who generously shared free assets with the community.
-
-Please support their amazing work.
+Huge thanks to all artists, musicians, and open-source creators who generously share their work with the community. Please support their amazing projects.
 
 ---
 
 ## 📜 Asset License
 
-All third-party assets belong to their respective creators.
+All third-party assets remain the property of their respective creators.
 
-This repository only contains assets used under their respective free/commercial licenses.
-
-Please do **NOT** redistribute these assets separately without following the original license.
+This repository only includes assets used under their original free/commercial licenses. Please do **not** redistribute third-party assets separately without complying with the original license terms.
 
 ---
 
 ## 📌 Roadmap
 
-- [x] Version 1.0 Release
-- [ ] New Boss
-- [ ] Inventory System
-- [ ] More Levels
-- [ ] Save Slots
-- [ ] Achievements
-- [ ] Steam Release
+* [x] Version 1.0 Release
+* [ ] New Boss
+* [ ] Inventory System
+* [ ] More Levels
+* [ ] Save Slots
+* [ ] Achievements
+* [ ] Steam Release
 
 ---
 
 ## 🐞 Known Issues
 
-- Some animations may occasionally overlap.
-- Additional optimization is planned.
+* Some animations may occasionally overlap.
+* Additional optimization is planned for future releases.
 
 ---
 
 ## ⭐ Support
 
-If you enjoyed this project,
+If you enjoyed this project:
 
-⭐ Star the repository
-
-🍴 Fork it
-
-🎮 Try the game
-
-💬 Leave feedback
+* ⭐ Star the repository
+* 🍴 Fork it
+* 🎮 Try the game
+* 💬 Share feedback
 
 ---
 
 <p align="center">
-
-Made with ❤️ by **Min Zayar Maung**
-
+  Made with ❤️ by <strong>Min Zayar Maung</strong>
 </p>
