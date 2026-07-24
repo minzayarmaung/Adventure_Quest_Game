@@ -49,6 +49,8 @@ public class SceneChanger {
         }
     }
 
+
+
     public void showGameOverScreen(int currentBgNum){
         // Mark the game as finished so other actions are ignored
         gm.setGameOver(true);
@@ -90,6 +92,9 @@ public class SceneChanger {
     public void showVictoryScreen(){
         // Mark game finished so interactions are disabled
         gm.setGameOver(true);
+
+        gm.stopMusic(gm.currentMusic);
+        gm.playSE(gm.victoryMusic);
 
         // Configure title label (CONGRATULATIONS)
         gm.ui.titleLabel.setText("CONGRATULATIONS");

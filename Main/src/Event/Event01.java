@@ -242,7 +242,7 @@ public class Event01 {
             gm.player.updatePlayerStatus();
             gm.ui.removeMonster();
             gm.stopMusic(gm.battleMusic);
-            gm.playSE(gm.victoryMusic);
+            gm.playSE(gm.gameComplete);
         }
     }
 

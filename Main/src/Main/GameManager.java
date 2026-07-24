@@ -69,6 +69,7 @@ public class GameManager {
     public URL forestSound   = getClass().getResource("/resources/music/forest_1.wav");
     public URL battleMusic   = getClass().getResource("/resources/music/battle.wav");
     public URL victoryMusic  = getClass().getResource("/resources/music/victory.wav");
+    public URL gameComplete  = getClass().getResource("/resources/music/gameComplete.wav");
     public URL currentMusic;
 
     public static void main(String[] args) {
