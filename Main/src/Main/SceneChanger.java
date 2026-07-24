@@ -68,11 +68,6 @@ public class SceneChanger {
         gm.ui.restartButton.setBounds(200, 300, 400, 50);
         gm.ui.restartButton.setBorderPainted(false);
         gm.ui.restartButton.setVisible(true);
-
-        gm.playSE(gm.deathSound);
-        gm.stopMusic(gm.currentMusic);
-        gm.currentMusic = gm.fieldMusic2;
-        gm.playMusic(gm.currentMusic);
     }
 
     public void existsGameOverScreen(){

@@ -181,6 +181,7 @@ public class Event01 {
         monsterLife = 3;
         gm.ui.showMonster(2);
         gm.ui.typeText("A Monster appears! It has 3 hearts. Right-click it and choose 'Attack'.\nWhen you attack, it will hit you back.");
+        gm.stopMusic(gm.caveSound);
         gm.playMusic(gm.battleMusic);
         gm.playSE(gm.monsterSound3);
     }
@@ -225,10 +226,10 @@ public class Event01 {
         if (gm.player.playerLife <= 0) {
             gm.ui.typeText("The Monster struck back and you died.");
             gm.ui.showMonster(2);
-            gm.sceneChanger.showGameOverScreen(2);
             gm.stopMusic(gm.currentMusic);
             gm.playMusic(gm.fieldMusic2);
             gm.playSE(gm.deathSound);
+            gm.sceneChanger.showGameOverScreen(2);
             return;
         }
 
@@ -319,6 +320,7 @@ public class Event01 {
         goldChestTaken = false;
         archerPresent = false;
         // Ensure UI chests/monsters/archer are removed
+        gm.stopMusic(gm.currentMusic);
         if (gm.ui != null) {
             gm.ui.removeGoldChest();
             gm.ui.removeMonster();
